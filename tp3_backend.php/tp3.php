@@ -25,7 +25,7 @@
     //Creamos un IF para validacion de datos: 
     if ($usuario == $ckusuario && $pass == $ckpass) {
         //echo "Correcto!"; 
-        header("location:https://juanmatoniolo.github.io/2thPageWeb/");
+        header("location: https://juanmatoniolo.github.io/2thPageWeb/");
     } else { 
        header("location:./login.html") ;
         
