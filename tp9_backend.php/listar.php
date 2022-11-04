@@ -10,14 +10,13 @@
 
 <body>
     <h1>Tienda de Ropa</h1>
+    <h3>Lista de productos</h3>
 
     <button type="submit"><a href="./index.html">Index</a> </button>
     <button type="submit"><a href="./listar.php">Listar</a> </button>
-    <button type="submit"><a href="./buzo.php">Buzos</a> </button>
-    <button type="submit"><a href="./nike.php">nike</a> </button>
-    <button type="submit"><a href="./mayores_a_500.php">mayores a 4800</a> </button>
-
-
+    <button type="submit"><a href="./agregar.php">agregar</a> </button>
+    <button type="submit"><a href="./borrar.php">borrar</a> </button>
+    <button type="submit"><a href="./modificar.php">Modificar </a> </button>
     <table style="text-align: center" border="1" >
         <tr>
             <th>ID</th>
@@ -25,6 +24,7 @@
             <th>MARCA</th>
             <th>TALLE</th>
             <th>PRECIO</th>
+            <th>Imagen</th>
         </tr>
 
 
@@ -38,13 +38,13 @@
 
         // Preparar la orden SQL
 
-        $consulta = "SELECT*FROM TiendaPotrero WHERE precio >= 4800 ";
+        $consulta = "SELECT*FROM TiendaPotrero";
 
 
         //Ejecutar la orden y obtener datos
 
         $datos = mysqli_query($conexion, $consulta);
-
+       
 
         // Ir Imprimiendo las filas resultantes
 
@@ -58,6 +58,7 @@
                 <td><?php echo $fila['marca']; ?> </td>
                 <td><?php echo $fila['talle']; ?> </td>
                 <td><?php echo $fila['precio']; ?> </td>
+                
             </tr>
         <?php } ?>
     </table>

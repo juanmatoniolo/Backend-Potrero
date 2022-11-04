@@ -38,7 +38,7 @@
 
         // Preparar la orden SQL
 
-        $consulta = "SELECT*FROM ropa WHERE marca = 'nike'";
+        $consulta = "SELECT*FROM TiendaPotrero WHERE marca = 'nike'";
 
 
         //Ejecutar la orden y obtener datos
