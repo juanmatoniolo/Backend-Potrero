@@ -14,10 +14,9 @@
 
     <button type="submit"><a href="./index.html">Index</a> </button>
     <button type="submit"><a href="./listar.php">Listar</a> </button>
-    <button type="submit"><a href="./agregar.php">agregar</a> </button>
-    <button type="submit"><a href="./borrar.php">borrar</a> </button>
-    <button type="submit"><a href="./modificar.php">Modificar </a> </button>
-    <table style="text-align: center" border="1" >
+    <button type="submit"><a href="./agregar.html">Agregar</a> </button>
+    <button type="submit"><a href="./borrar.php">Borrar</a> </button>
+    <table style="text-align: center" border="1">
         <tr>
             <th>ID</th>
             <th>TIP DE PRENDA</th>
@@ -44,7 +43,7 @@
         //Ejecutar la orden y obtener datos
 
         $datos = mysqli_query($conexion, $consulta);
-       
+
 
         // Ir Imprimiendo las filas resultantes
 
@@ -58,7 +57,9 @@
                 <td><?php echo $fila['marca']; ?> </td>
                 <td><?php echo $fila['talle']; ?> </td>
                 <td><?php echo $fila['precio']; ?> </td>
-                
+                <td><img src="data:image/jpg;base64, <?php echo base64_encode($fila['imagen']) ?>" alt="" width="100px" height="100px"></td>
+                <td><a href="modificar.php?id=<?php echo $fila['id']; ?>">Editar</a></td>
+                <td><a href="borrar.php?id=<?php echo $fila['id']; ?>">Borrar</a></td>
             </tr>
         <?php } ?>
     </table>
