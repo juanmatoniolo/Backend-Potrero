@@ -60,6 +60,7 @@
                 <td><img src="data:image/jpg;base64, <?php echo base64_encode($fila['imagen']) ?>" alt="" width="100px" height="100px"></td>
                 <td><a href="modificar.php?id=<?php echo $fila['id']; ?>">Editar</a></td>
                 <td><a href="borrar.php?id=<?php echo $fila['id']; ?>">Borrar</a></td>
+                
             </tr>
         <?php } ?>
     </table>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tp3 de php</title>
+    <title>login</title>
     
 
 </head>
@@ -14,8 +14,14 @@
     <?php
 
     //Vinculamos el loing con php 
-    $usuario =  $_POST['usuario'];
-    $pass  = $_POST['pass'];
+    $usuario =  $_POST["usuario"];
+    $pass  = $_POST["pass"];
+
+    session_start();
+    $_SESSION["usuario"] = $usuario; 
+
+
+
 
     //Creamos las variables para validar usuario y contraseña 
 
@@ -24,11 +30,11 @@
 
     //Creamos un IF para validacion de datos: 
     if ($usuario == $ckusuario && $pass == $ckpass) {
-        //echo "Correcto!"; 
-        header("location: https://juanmatoniolo.github.io/2thPageWeb/");
+    
+        header("location: ../html/panel.html");
     } else { 
-       header("location:./login.html") ;
-        
+       header("location: ../index.php") ;
+  
     }
     
 
